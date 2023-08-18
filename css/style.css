@@ -1,1 +1,459 @@
+/* VARIABLES, HEADINGS, AND OTHER GLOBAL STUFF */
 
+:root {
+	--color-bg-main: #ffffff;
+	--color-bg-accent: #e9edef;
+	--color-bg-navbar: #5E5D5899;
+	--color-bg-footer: #22353F;
+
+	--color-heading-dark: #4e4e4e;
+	--color-subheading-dark: #717171;
+
+	--color-text-dark: #777777;
+	--color-text-light: #ffffff;
+	--color-text-transparent: #ffffff99;
+
+	--color-fill-main: #18cfab;
+	--color-fill-accent: #00cbf6;
+	--color-fill-dark: #1C2A33;
+
+	--fontsize-xl: 40px;
+	--fontsize-l: 36px;
+	--fontsize-m: 16px;
+	--fontsize-s: 14px;
+	--fontsize-button: 15px;
+
+
+
+	font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+	margin: 0 auto;
+	width: 1160px;
+	padding-inline: 20px;
+}
+
+h2 {
+	position: relative;
+	text-align: center;
+	margin-bottom: 101px;
+
+	color: var(--color-heading-dark);
+	font-size: var(--fontsize-l);
+	text-transform: capitalize;
+}
+
+h2::after {
+	content: url("../img/lines.svg");
+	position: absolute;
+	bottom: -24px;
+	left: 50%;
+	transform: translateX(-50%);
+
+	/* width: 91px; */
+}
+
+
+/*  NAV & LOGO */
+
+
+nav {
+	position: absolute;
+	width: 100%;
+	height: 120px;
+	background-color: var(--color-bg-navbar);
+}
+
+nav .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	height: 100%;
+}
+
+.logo-link {
+	color: var(--color-text-light);
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+.logo-link:focus,
+.logo-link:hover,
+.logo-link:active {
+	outline: none;
+}
+
+
+
+.logo {
+	display: flex;
+	gap: 6px;
+	align-items: center;
+}
+
+.hex {
+	/* роблю new stacking context, щоб було видно шестикутник .hex::before */
+	position: relative;
+	z-index: 0;
+
+	font-size: 40px;
+	font-weight: 700;
+	text-transform: uppercase;
+	padding: 18px 14px;
+	color: var(--color-text-light);
+}
+
+.hex::before {
+	/* символ шестикутника: */
+	content: "\2B22";
+
+	position: absolute;
+	z-index: -1;
+	top: -21px;
+	left: -4px;
+	color: var(--color-fill-main);
+	font-size: 100px;
+	scale: 1;
+	transition: scale 0.3s ease;
+}
+
+.logo-link:hover .hex::before {
+	scale: 1.1;
+}
+
+
+
+
+
+
+.textlogo {
+	font-size: 32px;
+}
+
+.textlogo span {
+	color: var(--color-fill-main);
+	font-weight: 700;
+}
+
+
+nav .wrapper {
+	display: flex;
+	align-items: center;
+	gap: 21px;
+}
+
+nav ul {
+	display: flex;
+	align-items: center;
+	gap: 21px;
+
+	font-weight: 700;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+
+nav .wrapper,
+nav ul,
+nav li {
+	height: 100%;
+}
+
+nav li a {
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 100%;
+
+	text-decoration: none;
+	color: var(--color-text-transparent);
+}
+
+nav li a:hover,
+nav li a:focus,
+nav li a:active {
+	color: var(--color-fill-main);
+	outline: none;
+}
+
+nav li a::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	display: block;
+	height: 2px;
+	width: 100%;
+	background-color: var(--color-fill-main);
+
+	opacity: 0;
+	transition: opacity 0.4s ease-out;
+}
+
+nav li a:hover::after {
+	opacity: 100%;
+}
+
+
+
+input#search {
+	background-color: #ffffff99;
+}
+
+
+
+
+/* HEADER */
+
+
+header {
+	margin-bottom: 8px;
+	height: 1012px;
+	background-image: url(../img/sections-backgrounds/section-1-header.jpg);
+	background-attachment: fixed;
+}
+
+header .container {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.pre-slogan {
+	margin-bottom: 22px;
+
+	font-size: var(--fontsize-l);
+	font-weight: 700;
+	text-transform: uppercase;
+	color: var(--color-text-light);
+}
+
+.pre-slogan span {
+	color: var(--color-fill-main);
+}
+
+.slogan {
+	margin-bottom: 22px;
+
+	font-size: 78px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: var(--color-text-light);
+}
+
+.post-slogan {
+	margin-bottom: 129px;
+
+	font-size: var(--fontsize-l);
+	font-weight: 400;
+	text-transform: capitalize;
+	color: #d4d4d4;
+}
+
+
+
+/* HEADER BUTTONS */
+
+
+
+.action {
+	display: flex;
+	gap: 26px;
+
+}
+
+.action .button {
+	padding: 16px 18px;
+	margin-top: 4px;
+	margin-bottom: 0px;
+
+	font-weight: 700;
+	font-size: var(--fontsize-button);
+	text-transform: uppercase;
+	color: var(--color-text-light);
+	background-color: var(--color-fill-main);
+	border: 0;
+	border-radius: 3px;
+
+	/* Анімація кнопок: */
+	box-shadow: 0px -5px 0px var(--color-text-light);
+	transition:
+		margin 0.1s ease-out,
+		box-shadow 0.1s ease-out;
+
+}
+
+.action .button:active {
+	/* Анімація кнопок: */
+	margin-top: 0px;
+	margin-bottom: 4px;
+
+	box-shadow: 0px -1px 0px var(--color-text-light);
+}
+
+.action .button-accent {
+	background-color: var(--color-fill-accent);
+}
+
+
+
+
+/* SECTION OPTIONS */
+
+
+
+.options {
+	display: flex;
+	flex-wrap: nowrap;
+	margin-bottom: 83px;
+	
+	background-color: var(--color-fill-main);
+	color: var(--color-text-light);
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.options a {
+	flex-grow: 1;
+	gap: 50px;
+	display: flex;
+	flex-direction: column;
+
+	/* flex-end + margin-bottom останньої дитини — щоб контент "прагнув" донизу і "спирався" на margin-bottom останнього елемента (span) — так я отримую всі підписи на одній горизонтальній лінії: */
+	justify-content: flex-end;
+	align-items: center;
+	height: 377px;
+	width: 100%;
+	min-width: 290px;
+	
+	color: var(--color-text-light);
+	text-decoration: none;
+}
+
+.options a:nth-child(odd) {
+	color: var(--color-fill-main);
+	background-color: var(--color-fill-dark);
+}
+
+.options a svg {
+	scale: 1;
+	transition: 
+		scale 0.3s ease-out,
+		opacity 0.3s ease-out;
+}
+
+.options a:hover svg {
+	scale: 1.2;
+	opacity: 62%;
+}
+
+.options a span {
+	margin-bottom: 110px;
+}
+
+
+
+
+/* SECTION OUR SERVICES */
+
+.services {
+	margin-bottom: 91px;
+}
+
+.tabs {
+	display: flex;
+	margin-bottom: 27px;
+
+	text-transform: capitalize;
+}
+
+.tabs li {
+	position: relative;
+	width: 100%;
+	padding-block: 27px;
+	
+	text-align: center;
+	border: 1px solid #EDEFEF;
+	color: var(--color-text-dark);
+	background: #F8FCFE;
+	font-weight: 400;
+	cursor: pointer;
+}
+
+.tabs li.active {
+	background-color: var(--color-fill-main);
+	color: var(--color-text-light);
+}
+
+.tabs li.active::after {
+	content: "";
+	position: absolute;
+	bottom: -20px;
+	left: calc(50% - 10px);
+	/* магічний CSS трикутник — товсті кордони супер-малого обʼєкта: */
+	border: 10px solid transparent;
+	border-top: 10px solid var(--color-fill-main);
+}
+
+.tabs li:hover {
+	border: 1px solid var(--color-fill-main);
+}
+
+.tabs-content li {
+	display: flex;
+	gap: 15px;
+	flex-direction: row;
+}
+
+.tabs-content li img {
+	width: 192px;
+	height: 139px;
+}
+
+.tabs-content li p {
+	color: var(--color-text-dark);
+	font-size: var(--fontsize-s);
+	line-height: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 121px;
+
+	background-color: var(--color-bg-footer);
+	color: #aeaeae;
+	font-size: var(--fontsize-s);
+}
+
+footer a {
+	color: var(--color-fill-main);
+	text-decoration: none;
+}
