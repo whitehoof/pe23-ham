@@ -5,6 +5,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/png" href="img/favicon.png" />
+
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
 
@@ -18,7 +20,7 @@
 <body>
 	<nav>
 		<div class="container">
-			<a href="#" class="logo-link">
+			<a href="#bottom" class="logo-link">
 				<div class="logo">
 					<div class="hex">h</div>
 					<div class="textlogo">the<span>Ham</span></div>
@@ -28,19 +30,22 @@
 				<ul>
 					<li><a href="#">home</a></li>
 					<li><a href="#">about</a></li>
-					<li><a href="#">blog</a></li>
+					<li><a href="#blog">blog</a></li>
 					<li><a href="#">skills</a></li>
-					<li><a href="#">service</a></li>
-					<li><a href="#">work</a></li>
-					<li><a href="#">testimonials</a></li>
+					<li><a href="#services">service</a></li>
+					<li><a href="#work">work</a></li>
+					<li><a href="#testimonials">testimonials</a></li>
 				</ul>
+
 				<div class="search">
-					<input type="text" id="search">
+					<input type="text" id="search" placeholder="search...">
 					<img id="search-icon" src="img/search-icon.png" alt="Search">
 				</div>
-			</div> <!-- div.wrapper -->
-		</div> <!-- div.container -->
+
+			</div> <!-- .wrapper -->
+		</div> <!-- .container -->
 	</nav>
+
 	<header>
 		<div class="container">
 			<div class="pre-slogan">The Ham is a <span>Wordpress theme</span></div>
@@ -49,9 +54,10 @@
 			<div class="action">
 				<button class="button">expolre now</button>
 				<button class="button button-accent">purchase now</button>
-			</div>
+			</div> <!-- .container -->
 		</div>
 	</header>
+
 	<section class="options">
 		<a href="#">
 			<svg xmlns="http://www.w3.org/2000/svg" width="58" height="98" viewBox="0 0 58 98" fill="none">
@@ -85,55 +91,282 @@
 			</svg>
 			<span>responsive all device</span>
 		</a>
-	</section> <!-- section.options -->
+	</section> <!-- /section.options -->
+
 
 	<section class="services">
+		<a id="services"></a>
 		<div class="container">
 			<h2>our services</h2>
-			
-			<ul class="tabs">
+
+			<ul id="tabs" class="tabs">
 				<li class="tabs-title active">first service</li>
-				<li class="tabs-title">first service</li>
-				<li class="tabs-title">first service</li>
-				<li class="tabs-title">first service</li>
-				<li class="tabs-title">first service</li>
-				<li class="tabs-title">first service</li>
 			</ul>
 
 			<ul class="tabs-content">
 				<!-- web design -->
 				<li>
 					<img src="img/web-design/web-design1.jpg" alt="Web Design">
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus rerum pariatur odit hic beatae officiis quas ab voluptas quaerat dolore vitae ad fugiat nulla, veritatis voluptatem quo tempore magnam, at fugit! Quia, minus necessitatibus velit, autem accusamus temporibus quod eligendi reprehenderit eius placeat dicta! Quidem asperiores eius nesciunt animi accusamus ea ad cupiditate placeat amet voluptates dolorum repellat, soluta iusto totam facere labore laborum possimus in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sed laudantium dolorem hic odio molestiae eveniet totam facilis repellat voluptas! </p>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus rerum pariatur odit hic
+						beatae officiis quas ab voluptas quaerat dolore vitae ad fugiat nulla, veritatis voluptatem quo
+						tempore magnam, at fugit! Quia, minus necessitatibus velit, autem accusamus temporibus quod
+						eligendi reprehenderit eius placeat dicta! Quidem asperiores eius nesciunt animi accusamus ea ad
+						cupiditate placeat amet voluptates dolorum repellat, soluta iusto totam facere labore laborum
+						possimus in. Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus sed
+						laudantium dolorem hic odio molestiae eveniet totam facilis repellat voluptas! </p>
 				</li>
 				<!-- graphic design -->
 				<li>
 					<img src="img/web-design/web-design2.jpg" alt="Graphic Design">
-					<p>Fuga, beatae fugit earum iure, atque praesentium eos nesciunt, quo itaque nam molestias! Blanditiis tempora aut corrupti deleniti illo nemo. Veniam, vel sed illo beatae aliquam dolor fuga voluptate suscipit animi esse, voluptatum ex id ipsam repellendus eveniet, ipsum inventore ratione blanditiis possimus. Distinctio repellat ea, repudiandae beatae culpa error expedita obcaecati nostrum tenetur inventore cumque vero, eos adipisci rem nulla libero quia dolore quam tempora. Consequuntur ab recusandae libero autem obcaecati expedita placeat odio explicabo, quis, animi tempore delectus tenetur? Quaerat at praesentium quo consequuntur.</p>
+					<p>Fuga, beatae fugit earum iure, atque praesentium eos nesciunt, quo itaque nam molestias!
+						Blanditiis tempora aut corrupti deleniti illo nemo. Veniam, vel sed illo beatae aliquam dolor
+						fuga voluptate suscipit animi esse, voluptatum ex id ipsam repellendus eveniet, ipsum inventore
+						ratione blanditiis possimus. Distinctio repellat ea, repudiandae beatae culpa error expedita
+						obcaecati nostrum tenetur inventore cumque vero, eos adipisci rem nulla libero quia dolore quam
+						tempora. Consequuntur ab recusandae libero autem obcaecati expedita placeat odio explicabo,
+						quis, animi tempore delectus tenetur? Quaerat at praesentium quo consequuntur.</p>
 				</li>
 				<!-- online support -->
 				<li>
 					<img src="img/web-design/web-design3.jpg" alt="Online Support">
-					<p>Quidem explicabo natus modi facere maxime omnis tempore, voluptatem aliquam ipsam impedit possimus consequuntur nesciunt neque accusamus illum molestias exercitationem eligendi voluptas. Numquam quos molestiae, dolore explicabo ipsam soluta velit accusamus qui omnis cum veniam odit iure, maxime quam id nam ratione, ut repellat adipisci nemo doloribus asperiores. Doloremque minima illo similique vel voluptatem qui quasi veritatis, harum corrupti error rem blanditiis animi, quis culpa reprehenderit. Explicabo, odit inventore dolor labore minus officiis magni rem ab animi quaerat dicta accusamus, maxime blanditiis ad laborum delectus ipsa!</p>
+					<p>Quidem explicabo natus modi facere maxime omnis tempore, voluptatem aliquam ipsam impedit
+						possimus consequuntur nesciunt neque accusamus illum molestias exercitationem eligendi voluptas.
+						Numquam quos molestiae, dolore explicabo ipsam soluta velit accusamus qui omnis cum veniam odit
+						iure, maxime quam id nam ratione, ut repellat adipisci nemo doloribus asperiores. Doloremque
+						minima illo similique vel voluptatem qui quasi veritatis, harum corrupti error rem blanditiis
+						animi, quis culpa reprehenderit. Explicabo, odit inventore dolor labore minus officiis magni rem
+						ab animi quaerat dicta accusamus, maxime blanditiis ad laborum delectus ipsa!</p>
 				</li>
 				<!-- app design -->
 				<li>
 					<img src="img/web-design/web-design4.jpg" alt="App Design">
-					<p>Eligendi eum nesciunt ea doloremque laudantium porro exercitationem alias inventore fuga culpa necessitatibus dolor natus, perferendis recusandae quidem vero, officiis similique. Quidem, suscipit saepe, voluptas dolore dolores maxime libero quas laborum deleniti accusamus maiores quos et beatae eligendi eveniet vitae doloremque iure, itaque delectus atque provident labore. Architecto culpa expedita ipsa, consequuntur laudantium, omnis officia alias dignissimos, pariatur illum fuga excepturi id voluptas eius debitis repudiandae? Expedita earum facilis ipsam, animi illo magni possimus necessitatibus perspiciatis corporis accusamus, explicabo fuga vero eligendi at porro aliquam accusantium?</p>
+					<p>Eligendi eum nesciunt ea doloremque laudantium porro exercitationem alias inventore fuga culpa
+						necessitatibus dolor natus, perferendis recusandae quidem vero, officiis similique. Quidem,
+						suscipit saepe, voluptas dolore dolores maxime libero quas laborum deleniti accusamus maiores
+						quos et beatae eligendi eveniet vitae doloremque iure, itaque delectus atque provident labore.
+						Architecto culpa expedita ipsa, consequuntur laudantium, omnis officia alias dignissimos,
+						pariatur illum fuga excepturi id voluptas eius debitis repudiandae? Expedita earum facilis
+						ipsam, animi illo magni possimus necessitatibus perspiciatis corporis accusamus, explicabo fuga
+						vero eligendi at porro aliquam accusantium?</p>
 				</li>
 				<!-- online marketing -->
 				<li>
 					<img src="img/web-design/web-design5.jpg" alt="Online Marketing">
-					<p>A tempora sequi veniam explicabo eos aspernatur eveniet soluta earum omnis laudantium voluptate corrupti, cumque possimus excepturi at ea harum perspiciatis, distinctio illo! Nulla hic tempora ea dolore rem velit facilis non vero unde a doloremque ipsa veniam nihil recusandae aut officia sapiente, pariatur maiores alias neque iusto temporibus quas possimus quibusdam? Blanditiis vitae dolor quas unde accusamus, maiores mollitia? A nulla vel inventore odio ab? Voluptatum sunt velit laborum adipisci ad corrupti optio in sit facere nisi temporibus, beatae ratione, facilis aperiam? Labore, sed aliquam.</p>
+					<p>A tempora sequi veniam explicabo eos aspernatur eveniet soluta earum omnis laudantium voluptate
+						corrupti, cumque possimus excepturi at ea harum perspiciatis, distinctio illo! Nulla hic tempora
+						ea dolore rem velit facilis non vero unde a doloremque ipsa veniam nihil recusandae aut officia
+						sapiente, pariatur maiores alias neque iusto temporibus quas possimus quibusdam? Blanditiis
+						vitae dolor quas unde accusamus, maiores mollitia? A nulla vel inventore odio ab? Voluptatum
+						sunt velit laborum adipisci ad corrupti optio in sit facere nisi temporibus, beatae ratione,
+						facilis aperiam? Labore, sed aliquam.</p>
 				</li>
 				<!-- seo service -->
 				<li>
 					<img src="img/web-design/web-design6.jpg" alt="Seo Service">
-					<p>Nostrum minima eveniet animi quod voluptas modi? Architecto nostrum delectus aspernatur cumque atque sint, distinctio iure nobis enim corrupti, odio neque quas adipisci fugit vitae esse? Quia veritatis blanditiis quidem. Laudantium, eius modi autem illo, eum aut atque veritatis odit illum tempora quia magnam delectus molestias labore architecto accusamus at nemo eaque vitae placeat ex eligendi id beatae. Tempore laboriosam voluptates maiores suscipit eos. Asperiores, adipisci. Quam praesentium fuga quo suscipit aliquid, soluta eveniet voluptatibus eligendi illo dolorem fugiat ex quos pariatur, quod ratione tempore sit!</p>
+					<p>Nostrum minima eveniet animi quod voluptas modi? Architecto nostrum delectus aspernatur cumque
+						atque sint, distinctio iure nobis enim corrupti, odio neque quas adipisci fugit vitae esse? Quia
+						veritatis blanditiis quidem. Laudantium, eius modi autem illo, eum aut atque veritatis odit
+						illum tempora quia magnam delectus molestias labore architecto accusamus at nemo eaque vitae
+						placeat ex eligendi id beatae. Tempore laboriosam voluptates maiores suscipit eos. Asperiores,
+						adipisci. Quam praesentium fuga quo suscipit aliquid, soluta eveniet voluptatibus eligendi illo
+						dolorem fugiat ex quos pariatur, quod ratione tempore sit!</p>
 				</li>
 			</ul>
+		</div> <!-- .container -->
+	</section> <!-- /section.services -->
+
+	<section class="buynow">
+		<div class="container">
+			<div class="pre-slogan color-main fontsize-xl">Everything is ready. Just buy and install now</div>
+			<div class="post-slogan fontsize-m">just buy and enjoy these awesome features</div>
+			<div class="action">
+				<button class="button">purchase now</button>
+			</div>
+		</div> <!-- /.container -->
+	</section> <!-- /section.buynow -->
+
+	<section class="work">
+		<a id="work"></a>
+		<div class="container">
+			<h2>our amazing work</h2>
+			<ul id="filters" class="tabs">
+				<li class="tabs-title active">All</li>
+				<li class="tabs-title">Graphic Design</li>
+				<li class="tabs-title">Web Design</li>
+				<li class="tabs-title">Landing Pages</li>
+				<li class="tabs-title">Wordpress</li>
+			</ul>
+
+			<ul id="ourwork">
+				<li>
+					<img src="img/graphic-design/graphic-design12.jpg" alt="our amazing work">
+
+					<div class="work-hovered">
+						<svg xmlns="http://www.w3.org/2000/svg" width="88" height="43" viewBox="0 0 88 43" fill="none">
+							<g clip-path="url(#clip0_2143_233)">
+								<rect x="1" y="2" width="41" height="40" rx="20" stroke="#18CFAB" />
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M26.9131 17.7282L25.0948 15.8913C24.2902 15.0809 22.983 15.0759 22.1768 15.8826L20.1592 17.8926C19.3516 18.6989 19.3482 20.0103 20.1505 20.8207L21.3035 19.689C21.1868 19.3284 21.3304 18.9153 21.6159 18.6295L22.8995 17.3519C23.3061 16.9462 23.9584 16.9491 24.3595 17.3543L25.4513 18.458C25.8528 18.8628 25.8511 19.5171 25.447 19.9232L24.1634 21.2024C23.8918 21.473 23.4461 21.6217 23.1002 21.5263L21.9709 22.6589C22.7745 23.4718 24.0803 23.4747 24.8889 22.6684L26.9039 20.6592C27.7141 19.8525 27.7167 18.5398 26.9131 17.7282ZM19.5261 25.0918C19.6219 25.4441 19.4686 25.8997 19.1909 26.1777L17.9923 27.3752C17.5807 27.7845 16.916 27.7833 16.5067 27.369L15.393 26.2475C14.9847 25.8349 14.9873 25.1633 15.3982 24.7547L16.598 23.5577C16.8903 23.2661 17.3104 23.1202 17.6771 23.2438L18.8335 22.0715C18.0149 21.2462 16.6825 21.2421 15.8606 22.0632L13.9152 24.0042C13.0923 24.8266 13.0884 26.1629 13.9065 26.9886L15.7582 28.8618C16.576 29.6846 17.9072 29.6912 18.7311 28.8701L20.6765 26.9287C21.4985 26.1054 21.5024 24.7717 20.6855 23.9443L19.5261 25.0918ZM19.2579 24.5631C18.9801 24.8419 18.5343 24.8411 18.2618 24.5581C17.9879 24.2743 17.9901 23.8204 18.2661 23.5399L21.5907 20.1611C21.8668 19.8823 22.3117 19.8831 22.5851 20.164C22.8605 20.4457 22.8588 20.9009 22.5817 21.183L19.2579 24.5631Z"
+									fill="#1FDAB5" />
+								<path fill-rule="evenodd" clip-rule="evenodd"
+									d="M66.5973 1.99795C77.8653 1.99795 86.9999 10.9523 86.9999 21.9979C86.9999 33.0432 77.8653 41.9979 66.5973 41.9979C55.3292 41.9979 46.1946 33.0432 46.1946 21.9979C46.1946 10.9523 55.3292 1.99795 66.5973 1.99795Z"
+									fill="#18CFAB" />
+								<rect x="60" y="17" width="12" height="11" fill="white" />
+							</g>
+							<defs>
+								<clipPath id="clip0_2143_233">
+									<rect width="88" height="43" fill="white" />
+								</clipPath>
+							</defs>
+						</svg>
+						<div class="subtitle">creative design</div>
+						<div class="taglist">web design</div>
+
+					</div>
+					<div class="preloader"></div>
+				</li>
+
+			</ul>
+
+			<div class="action">
+				<button class="button button-plus">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+						<path fill-rule="evenodd" clip-rule="evenodd"
+							d="M15.5 6.99735H9.99996V1.49787C9.99996 1.22194 9.77611 0.997242 9.49998 0.997242H6.4999C6.22387 0.997242 5.99991 1.22194 5.99991 1.49787V6.99735H0.499994C0.223838 6.99735 7.98702e-06 7.22206 7.98702e-06 7.4984V10.4976C7.98702e-06 10.7731 0.223838 10.9974 0.499994 10.9974H5.99991V16.4977C5.99991 16.7732 6.22387 16.998 6.4999 16.998H9.49998C9.77611 16.998 9.99996 16.7732 9.99996 16.4977V10.9974H15.5C15.776 10.9974 16 10.7731 16 10.4976V7.4984C16 7.22206 15.776 6.99735 15.5 6.99735Z"
+							fill="white" />
+					</svg>
+					<span>load more</span>
+				</button>
+			</div> <!-- .action -->
+
+
+
+
+		</div> <!-- .container -->
+	</section> <!-- /section.work -->
+
+	<section class="news">
+		<a id="blog"></a>
+		<div class="container">
+			<h2>breaking news</h2>
+			<div id="news-parent">
+				<a href="#">
+					<img src="img/news/image-8.png" alt="">
+					<div class="date">22<br>Aug</div>
+					<div class="title">Amazing Blog Post</div>
+					<div class="details">by admin | 2 comments</div>
+				</a>
+			</div>
 		</div>
-	</section> <!-- section.services -->
+	</section> <!-- /section.news -->
+
+	<section class="testimonials">
+		<a id="testimonials"></a>
+		<div class="container">
+			<h2>What People Say About theHam</h2>
+
+			<ul id="carousel-content">
+
+				<li class="active">
+					<p class="text">Not so good. Needs more fish. Not so good. Needs more fish. Not so good. Needs more fish. Not so good. Needs more fish. Not so good. Needs more fish. Not so good. Needs more fish. Not so good. Needs more fish. Not so good. Needs more fish. Not so good. Needs more fish. Not so good. Needs more fish. Not so good. Needs more fish. Not so good. Needs more fish. Not so good. Needs MORE fish!!!
+					</p>
+					<p class="name">Pixie Black</p>
+					<p class="job">UX Designer</p>
+					<div class="circle">
+						<img src="img/testimonials/portrait143-1.jpg" alt="Pixie Black">
+					</div>
+				</li>
+
+				<li>
+					<p class="text">Splendid, I will take two more! Temporibus beatae quas nulla quo corrupti ratione error
+						accusamus modi consequuntur?
+						Consequuntur dolorem mollitia, veritatis quaerat modi quod magnam, voluptate sapiente porro
+						illum ipsa, esse quam sed aspernatur sunt adipisci inventore asperiores dolore molestias? Culpa
+						sunt quam dicta, hic deleniti officia aliquid quas dolor explicabo possimus perspiciatis velit!
+					</p>
+					<p class="name">Tom Whiskers</p>
+					<p class="job">UI Designer</p>
+					<div class="circle">
+						<img src="img/testimonials/portrait143-2.jpg" alt="Tom Whiskers">
+					</div>
+				</li>
+
+				<li>
+					<p class="text">Jolly good, jolly good! Mollitia repellendus asperiores facilis recusandae! Voluptate
+						molestias accusamus
+						dolor hic aspernatur ipsum earum quisquam quos? Numquam vitae facilis perferendis accusantium
+						deserunt quasi aliquam, non nostrum? Eveniet doloribus nihil assumenda maiores earum laudantium,
+						libero eius rerum, deleniti amet at veniam ducimus odit, tempore officiis sequi itaque eos iste
+						ex?</p>
+					<p class="name">Prince Meow</p>
+					<p class="job">UX/UI Designer</p>
+					<div class="circle">
+						<img src="img/testimonials/portrait143-3.jpg" alt="Prince Meow">
+					</div>
+				</li>
+
+				<li>
+					<p class="text">theHam rulez! Placeat commodi eveniet asperiores officia molestiae? A suscipit error quos cum
+						exercitationem est nesciunt quam, aperiam dignissimos possimus inventore quaerat temporibus
+						laborum. Odio perferendis consequatur sed fugiat. Minima veniam iste rerum quisquam nemo
+						dignissimos eveniet natus, minus amet repudiandae autem sunt vitae, asperiores cupiditate
+						debitis cumque aperiam harum.</p>
+					<p class="name">Jack Pirate</p>
+					<p class="job">Web Designer</p>
+					<div class="circle">
+						<img src="img/testimonials/portrait143-4.jpg" alt="Jack Pirate">
+					</div>
+				</li>
+
+			</ul> <!-- /#carousel-content -->
+
+			<div class="wrapper-flex">
+				<svg class="scroller scroller-left" width="31" height="31" viewBox="0 0 31 31" fill="none">
+					<rect width="31" height="31" fill="black" fill-opacity="0.01" stroke="#ffffff" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M17.5076 21.5076L18.8126 20.1056L14.5246 15.4963L18.8126 10.8899L17.5076 9.4867L11.9146 15.4963L17.5076 21.5076Z"
+						fill="#ffffff" />
+				</svg>
+				<ul id="carousel">
+
+
+					<li class="active">
+						<div class="circle">
+							<img src="img/testimonials/portrait143-1.jpg" alt="Pixie Black">
+						</div>
+					</li>
+
+
+
+					<li>
+						<div class="circle">
+							<img src="img/testimonials/portrait143-2.jpg" alt="Tom Whiskers">
+						</div>
+					</li>
+					<li>
+						<div class="circle">
+							<img src="img/testimonials/portrait143-3.jpg" alt="Prince Meow">
+						</div>
+					</li>
+					<li>
+						<div class="circle">
+							<img src="img/testimonials/portrait143-4.jpg" alt="Jack Pirate">
+						</div>
+					</li>
+				</ul>
+				<svg class="scroller scroller-right" width="31" height="31" viewBox="0 0 31 31" fill="none">
+					<rect width="31" height="31" fill="none" stroke="#ffffff" />
+					<path fill-rule="evenodd" clip-rule="evenodd"
+						d="M17.5076 21.5076L18.8126 20.1056L14.5246 15.4963L18.8126 10.8899L17.5076 9.4867L11.9146 15.4963L17.5076 21.5076Z"
+						fill="#ffffff" />
+				</svg>
+			</div><!-- /.wrapper-flex -->
+
+
+		</div> <!-- /.container -->
+	</section> <!-- /section.testimonials -->
+
+
 
 
 
@@ -146,10 +379,9 @@
 	<footer>
 		<p>&copy; Copyright 2015 <a href="#">theHam</a> | All Rights Reserved</p>
 	</footer>
+
+	<a id="bottom"></a>
 	<script src="js/script.js"></script>
 </body>
 
 </html>
-
-
-

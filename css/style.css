@@ -1,4 +1,6 @@
-/* VARIABLES, HEADINGS, AND OTHER GLOBAL STUFF */
+/* VARIABLES, HEADINGS, BUTTONS AND OTHER GLOBAL STUFF */
+
+
 
 :root {
 	--color-bg-main: #ffffff;
@@ -14,33 +16,42 @@
 	--color-text-transparent: #ffffff99;
 
 	--color-fill-main: #18cfab;
+	--color-border-portrait: #18cfab33;
 	--color-fill-accent: #00cbf6;
 	--color-fill-dark: #1C2A33;
 
-	--fontsize-xl: 40px;
-	--fontsize-l: 36px;
+	--fontsize-xxl: 40px;
+	--fontsize-xl: 36px;
+	--fontsize-l: 18px;
 	--fontsize-m: 16px;
 	--fontsize-s: 14px;
+	--fontsize-xs: 12px;
 	--fontsize-button: 15px;
+
+	--width-container: 1160px;
+
+	--dur-short: 140ms;
+	--dur-carousel: 450ms;
 
 
 
 	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
 }
 
 .container {
 	margin: 0 auto;
-	width: 1160px;
+	width: var(--width-container);
 	padding-inline: 20px;
 }
 
 h2 {
 	position: relative;
 	text-align: center;
-	margin-bottom: 101px;
+	margin-bottom: 100px;
 
 	color: var(--color-heading-dark);
-	font-size: var(--fontsize-l);
+	font-size: var(--fontsize-xl);
 	text-transform: capitalize;
 }
 
@@ -50,12 +61,66 @@ h2::after {
 	bottom: -24px;
 	left: 50%;
 	transform: translateX(-50%);
+}
 
-	/* width: 91px; */
+.button {
+	padding: 16px 18px;
+	margin-top: 4px;
+	margin-bottom: 0px;
+
+	font-weight: 700;
+	font-size: var(--fontsize-button);
+	text-transform: uppercase;
+	color: var(--color-text-light);
+	background-color: var(--color-fill-main);
+	border: 0;
+	border-radius: 3px;
+
+	/* Анімація кнопок: */
+	box-shadow: 0px -5px 0px var(--color-text-light);
+	transition:
+		margin var(--dur-short) ease-out,
+		box-shadow var(--dur-short) ease-out;
+
 }
 
 
+
+/* container for buttons: */
+
+.action {
+	display: flex;
+	gap: 26px;
+	justify-content: center;
+}
+
+ .button:active {
+	/* Анімація кнопок: */
+	margin-top: 0px;
+	margin-bottom: 4px;
+
+	box-shadow: 0px -1px 0px var(--color-text-light);
+}
+
+.button-accent {
+	background-color: var(--color-fill-accent);
+}
+
+.button-plus {
+	display: flex;
+	gap: 16px;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+
+
 /*  NAV & LOGO */
+
+
+
 
 
 nav {
@@ -103,32 +168,30 @@ nav .container {
 	font-size: 40px;
 	font-weight: 700;
 	text-transform: uppercase;
-	padding: 18px 14px;
+	padding: 0 14px;
 	color: var(--color-text-light);
 }
 
 .hex::before {
 	/* символ шестикутника: */
-	content: "\2B22";
+	content: url("../img/hex.svg");
+	width: 67px;
+	height: 67px;
 
 	position: absolute;
 	z-index: -1;
-	top: -21px;
 	left: -4px;
-	color: var(--color-fill-main);
+	transform: translateY(-50%);
 	font-size: 100px;
 	scale: 1;
-	transition: scale 0.3s ease;
+	transition: 
+		scale var(--dur-carousel) ease;
 }
+
 
 .logo-link:hover .hex::before {
 	scale: 1.1;
 }
-
-
-
-
-
 
 .textlogo {
 	font-size: 32px;
@@ -152,7 +215,7 @@ nav ul {
 	gap: 21px;
 
 	font-weight: 700;
-	font-size: 16px;
+	font-size: var(--fontsize-m);
 	text-transform: uppercase;
 }
 
@@ -188,9 +251,9 @@ nav li a::after {
 	height: 2px;
 	width: 100%;
 	background-color: var(--color-fill-main);
-
+	
 	opacity: 0;
-	transition: opacity 0.4s ease-out;
+	transition: all var(--dur-carousel) ease-out;
 }
 
 nav li a:hover::after {
@@ -199,9 +262,47 @@ nav li a:hover::after {
 
 
 
-input#search {
-	background-color: #ffffff99;
+
+
+
+
+
+/* SEARCH */
+
+
+
+
+/* show input on icon clicked */
+/* while input is shown, icon acts as submit */
+/* hide input 5 sec after input or icon is blurred */
+
+#search-icon {
+	cursor: pointer;
 }
+
+input#search {
+	background-color: #00000099;
+	width: 0;
+	opacity: 0;
+	transition: all var(--dur-short) ease-out;
+	
+	border: 1px solid var(--color-text-light);
+	color: var(--color-text-light);
+	font-weight: 300;
+}
+
+input#search.active {
+	width: 160px;
+	opacity: 1;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -209,10 +310,15 @@ input#search {
 /* HEADER */
 
 
+
+
+
+
 header {
 	margin-bottom: 8px;
 	height: 1012px;
 	background-image: url(../img/sections-backgrounds/section-1-header.jpg);
+	background-size: cover;
 	background-attachment: fixed;
 }
 
@@ -227,7 +333,7 @@ header .container {
 .pre-slogan {
 	margin-bottom: 22px;
 
-	font-size: var(--fontsize-l);
+	font-size: var(--fontsize-xl);
 	font-weight: 700;
 	text-transform: uppercase;
 	color: var(--color-text-light);
@@ -249,7 +355,7 @@ header .container {
 .post-slogan {
 	margin-bottom: 129px;
 
-	font-size: var(--fontsize-l);
+	font-size: var(--fontsize-xl);
 	font-weight: 400;
 	text-transform: capitalize;
 	color: #d4d4d4;
@@ -257,53 +363,15 @@ header .container {
 
 
 
-/* HEADER BUTTONS */
 
-
-
-.action {
-	display: flex;
-	gap: 26px;
-
-}
-
-.action .button {
-	padding: 16px 18px;
-	margin-top: 4px;
-	margin-bottom: 0px;
-
-	font-weight: 700;
-	font-size: var(--fontsize-button);
-	text-transform: uppercase;
-	color: var(--color-text-light);
-	background-color: var(--color-fill-main);
-	border: 0;
-	border-radius: 3px;
-
-	/* Анімація кнопок: */
-	box-shadow: 0px -5px 0px var(--color-text-light);
-	transition:
-		margin 0.1s ease-out,
-		box-shadow 0.1s ease-out;
-
-}
-
-.action .button:active {
-	/* Анімація кнопок: */
-	margin-top: 0px;
-	margin-bottom: 4px;
-
-	box-shadow: 0px -1px 0px var(--color-text-light);
-}
-
-.action .button-accent {
-	background-color: var(--color-fill-accent);
-}
 
 
 
 
 /* SECTION OPTIONS */
+
+
+
 
 
 
@@ -343,8 +411,8 @@ header .container {
 .options a svg {
 	scale: 1;
 	transition: 
-		scale 0.3s ease-out,
-		opacity 0.3s ease-out;
+		scale var(--dur-carousel) ease-out,
+		opacity var(--dur-carousel) ease-out;
 }
 
 .options a:hover svg {
@@ -359,7 +427,15 @@ header .container {
 
 
 
+
+
+
 /* SECTION OUR SERVICES */
+
+
+
+
+
 
 .services {
 	margin-bottom: 91px;
@@ -385,7 +461,8 @@ header .container {
 	cursor: pointer;
 }
 
-.tabs li.active {
+.tabs li.active,
+.work .tabs li.active {
 	background-color: var(--color-fill-main);
 	color: var(--color-text-light);
 }
@@ -426,11 +503,428 @@ header .container {
 
 
 
+/* SECTION BUY NOW */
+
+
+
+.buynow {
+	height: 476px;
+	/* margin-bottom: 96px; */
+
+	background-image:
+		linear-gradient(
+		rgba(0, 0, 0, 0.7), 
+		rgba(0, 0, 0, 0.7)
+	  ),
+	  	url(../img/sections-backgrounds/section-2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.buynow .container {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.buynow .post-slogan {
+	margin-bottom: 62px;
+}
 
 
 
 
 
+
+
+/* SECTION OUR AMAZING WORK */
+
+
+
+.work {
+	background-color: var(--color-bg-accent);
+	padding-block: 100px;
+
+}
+
+.work .tabs li {
+	background: transparent;
+}
+
+.work .preloader {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	background-color: var(--color-bg-accent);
+	background-image: url("../img/spinner.gif");
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+
+
+#ourwork {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin-bottom: 100px;
+}
+
+
+#ourwork > li {
+	position: relative;
+
+	width: 25%;
+	height: 211px;
+	text-align: center;
+	overflow: hidden;
+}
+
+#ourwork > li img {
+	position: absolute;
+	height: 100%;
+	transform: translateX(-50%);
+}
+
+#ourwork > li:hover .work-hovered {
+	display: flex;
+}
+
+.work-hovered {
+	position: absolute;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 100%;
+	background-color: #ffffffee;
+}
+
+.work-hovered svg {
+	margin-bottom: 36px;
+}
+
+.work-hovered .subtitle {
+	margin-bottom: 12px;
+	color: var(--color-fill-main);
+	font-weight: 700;
+	font-size: var(--fontsize-s);
+	text-transform: uppercase;
+}
+
+.work-hovered .taglist {
+	color: var(--color-fill-dark);
+	font-weight: 300;
+	font-size: var(--fontsize-xs);
+	text-transform: capitalize;
+}
+
+
+
+
+
+
+/* SECTION BREAKING NEWS */
+
+
+
+
+.news {
+	margin-bottom: 130px;
+}
+
+.news h2 {
+	padding-top: 82px;
+}
+
+#news-parent {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+#news-parent a {
+	position: relative;
+	margin-bottom: 45px;
+	width: 268px;
+	text-decoration: none;
+}
+
+#news-parent img {
+	width: 100%;
+	margin-bottom: 16px;
+}
+
+#news-parent .date {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 70px;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+
+	background-color: var(--color-fill-dark);
+	color: var(--color-text-light);
+	font-weight: 400;
+	font-size: var(--fontsize-m);
+	line-height: 150%;
+}
+
+#news-parent .title {
+	
+	margin-bottom: 18px;
+	font-size: var(--fontsize-l);
+	font-weight: 700;
+	color: var(--color-subheading-dark);
+}
+
+#news-parent .details {
+	margin-bottom: 12px;
+	font-size: var(--fontsize-s);
+	font-weight: 300;
+	color: var(--color-subheading-dark);
+}
+
+
+#news-parent a:hover .title {
+	color: var(--color-fill-main);
+}
+
+#news-parent a:hover .date {
+	background-color: var(--color-fill-main);
+}
+
+
+
+
+
+
+
+
+
+/* SECTION TESTIMONIALS */
+
+
+
+
+.testimonials {
+	padding-block: 100px;
+
+	background-image:
+		linear-gradient(
+		rgba(0, 0, 0, 0.5), 
+		rgba(0, 0, 0, 0.5)
+	  ),
+	  	url("../img/sections-backgrounds/section-3.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.testimonials .container {
+	display: flex;
+	/* height: 100%; */
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.testimonials h2 {
+	margin-bottom: 168px;
+	color: var(--color-text-light);
+	font-weight: 400;
+	/* наступний рядок — заради "theHam": */
+	text-transform: none;
+}
+
+
+
+
+
+
+
+
+/* CAROUSEL CONTENT: */
+
+
+
+
+
+
+
+#carousel-content {
+	position: relative;
+	/* без розмірів UL колапсує до нуля: */
+	width: 100%;
+	height: 420px;
+}
+
+#carousel-content > li {
+	position: absolute;
+	opacity: 0;
+
+	transition: all var(--dur-carousel) ease;
+}
+
+#carousel-content > li.active {
+	opacity: 1;
+}
+
+
+#carousel-content .text {
+	position: relative;
+	margin-bottom: 37px;
+	
+	text-align: center;
+	color: var(--color-text-light);
+	font-size: var(--fontsize-m);
+	font-weight: 300;
+	line-height: 180%;
+}
+
+#carousel-content .text::before {
+	content: url("../img/quote.png");
+	position: absolute;
+	top: -68px;
+	left: 50%;
+	transform: translateX(-50%);
+
+}
+
+#carousel-content .name {
+	margin-bottom: 18px;
+	
+	text-align: center;
+	color: var(--color-fill-main);
+	font-weight: 700;
+	font-size: var(--fontsize-m);
+	text-transform: uppercase;
+}
+
+#carousel-content .job {
+	margin-bottom: 37px;
+	
+	text-align: center;
+	color: var(--color-text-dark);
+	font-weight: 300;
+	font-size: var(--fontsize-s);
+	line-height: 180%;
+}
+
+#carousel-content .circle,
+#carousel .circle {
+	margin: 0 auto;
+	width: 142px;
+	height: 142px;
+	border: 10px solid var(--color-border-portrait);
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+#carousel-content .circle {
+	margin-bottom: 38px;
+}
+
+
+
+
+
+
+
+
+/* CAROUSEL CONTROL: */
+
+
+
+
+
+.wrapper-flex {
+	display: flex;
+	gap: 27px;
+	justify-items: center;
+	align-items: center;
+}
+
+#carousel {
+	display: flex;
+	gap: 27px;
+	justify-items: center;
+	align-items: center;
+	height: 110px;
+}
+
+#carousel .circle {
+	width: 71px;
+	height: 71px;
+	border-width: 5px;
+}
+
+#carousel img {
+	width: 71px;
+	height: 71px;	
+}
+
+#carousel li .circle img {
+	transition: all calc(var(--dur-carousel) * 0.68) ease-in-out;
+}
+#carousel li:hover .circle img {
+	scale: 1.1;
+}
+
+#carousel li {
+	margin-bottom: 0px;
+	transition: all calc(var(--dur-carousel) * 0.68) ease-in-out;
+	cursor: pointer;
+}
+
+#carousel li.active {
+	margin-bottom: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SCROLLER BUTTONS: */
+
+.scroller {
+	cursor: pointer;
+}
+
+.scroller:hover,
+.scroller:focus {
+	background-color: var(--color-fill-main);
+}
+
+.scroller:active {
+	scale: 0.9;
+}
+
+.scroller-right {
+	rotate: 180deg;
+}
 
 
 
@@ -441,6 +935,9 @@ header .container {
 
 
 /* FOOTER */
+
+
+
 
 footer {
 	display: flex;
@@ -456,4 +953,28 @@ footer {
 footer a {
 	color: var(--color-fill-main);
 	text-decoration: none;
+}
+
+
+
+
+
+
+
+/* MISC FIXES */
+
+
+
+
+
+.color-main {
+	color: var(--color-fill-main);
+}
+
+.fontsize-xl {
+	font-size: var(--fontsize-xxl);
+}
+
+.fontsize-m {
+	font-size: var(--fontsize-m);
 }
