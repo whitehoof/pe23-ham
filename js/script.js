@@ -96,7 +96,7 @@ fillGallery("img/graphic-design/graphic-design", ".jpg", 12, true);
 
 
 
-// вішаю слухач на кнопку LOAD MORE:
+// вішаю слухач на кнопку LOAD MORE WORKS:
 
 const loadMoreWorksButton = document.querySelector(".work .button-plus");
 
@@ -175,7 +175,12 @@ const goLeft = document.querySelector(".scroller-left").addEventListener("click"
 
 
 
+
+
 // слухач на правий скрол каруселі:
+
+
+
 
 const goRight = document.querySelector(".scroller-right").addEventListener("click", () => {
 	let next;
@@ -197,9 +202,14 @@ const goRight = document.querySelector(".scroller-right").addEventListener("clic
 
 
 
-// слухачі на пошук:
 
-const search = document.querySelector("#search-icon").addEventListener("click", () => {
+
+// слухач на пошук:
+
+
+
+
+document.querySelector("#search-icon").addEventListener("click", () => {
 	if (document.querySelector("input#search").classList.contains("active")) {
 		if (document.querySelector("input#search").value !== "") {
 			window.open(`https://www.google.com/search?q=${document.querySelector("input#search").value}`);
@@ -217,6 +227,41 @@ const search = document.querySelector("#search-icon").addEventListener("click", 
 
 
 
+// Функціонал GALLERY OF BEST IMAGES — MASONRY:
+const picWidths = [390, 150, 75]; // три варіанти розміру картинок (тягну їх з сайта Lorem Picsum).
+const numOfPics = [1, 2, 4]; // скільки картинок кожного розміру довантажувати (великих поменше, малих побільше).
+const maxBricks = 48; // ліміт картинок в секції Masonry.
+
+const masonryOptions = {
+	columnWidth: 60,
+	itemSelector: '.grid-item',
+	gutter: 20,
+	horizontalOrder: false,
+}
+
+loadMoreBricks(0);
+// видаляю зразкову картинку, щоб не зʼїжджали рядки картинок:
+document.querySelector(".grid-item:first-child").remove();
+loadMoreBricks(1);
+loadMoreBricks(2);
+
+// вішаю слухач на кнопку LOAD MORE WORKS:
+
+const loadMoreMasonryButton = document.querySelector(".gallery .button-plus");
+
+const loadMoreMasonry = loadMoreMasonryButton.addEventListener("click", () => {
+	loadMoreBricks();
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -228,9 +273,9 @@ const search = document.querySelector("#search-icon").addEventListener("click", 
 
 
 
-// функція, яка додає до галереї вказану кількість робіт:
-// функція розраховує на наявність цифри в назві файла картинки!
-// останній аргумент взначає, чи видаляти оригінал при клонуванні.
+// функція, яка додає до галереї РОБІТ (не Masonry!) вказану кількість робіт:
+// функція розраховує на наявність цифри в назві файла картинки (початок з "1")!
+// останній аргумент визначає, чи видаляти оригінал при клонуванні.
 
 function fillGallery(filenameStart, filenameEnd = "", numTiles = 1, toRemoveModel = false) {
 	const parentEl = document.querySelector("#ourwork");
@@ -271,6 +316,105 @@ function fillGallery(filenameStart, filenameEnd = "", numTiles = 1, toRemoveMode
 		parentEl.append(clone);
 	};
 };
+
+
+
+
+
+
+
+
+
+// функція, яка додає до галереї Masonry вказану кількість елементів.
+// функція розраховує на наявність цифри в назві файла картинки (початок з "1")!
+// останній аргумент визначає, чи видаляти оригінал при клонуванні.
+
+function fillMasonry(filenameStart, filenameEnd = "", numTiles = 1, toRemoveModel = true) {
+	let clones = [];
+	const parentEl = document.querySelector(".grid");
+
+	// беру перший елемент, який буду клонувати:
+	const model = parentEl.querySelector(".grid-item");
+
+	// клоную з заміною цифри в назві файлу картинки,
+	// додаю клонові рандомно теги,
+	// додаю клон в кінець батьківського елемента:
+	for (let i = 1; i <= numTiles; i++) {
+		let clone = model.cloneNode(true);
+		if (toRemoveModel) {
+			model.remove();
+		} else {
+			model.querySelector(".grid-item .preloader").style.display = "none";
+		}
+		// задаю унікальний url картинки:
+		clone.querySelector("img").src = `${filenameStart}${i}${filenameEnd}`;
+
+		// вмикаю показ прелоадера перед додаванням на сторінку:
+		clone.querySelector(".grid-item .preloader").style.display = "block";
+
+		// задаю приховування прелоадера для новоствореного елемента галереї:
+		let cloneTimeout = setTimeout(() => {
+			clone.querySelector(".grid-item .preloader").style.display = "none";
+			clearTimeout(cloneTimeout);
+			// перші картинки "довантажаться" раніше, ніж наступні, але з невеличким рандомом:
+		}, (i + randBetween(0, 5)) * 100);
+		parentEl.append(clone);
+		clones.push(clone);
+	};
+	return clones;
+};
+
+
+
+
+
+
+
+function loadMoreBricks(rand){
+	let newBricks = [];
+	document.querySelector(".grid").style.opacity = "0.2";
+	// якщо картинок менше, ніж 36, додаю і знов рахую:
+	if (document.querySelectorAll(".grid-item").length < maxBricks) {
+		// додаю ще картинок, задаю розміри картинок рандомно з трьох варіантів, враховуючи ширину гріда Месонрі, при цьому якщо картинка мала, то додаю три штуки такого розміру, якщо середня — то дві, якщо велика - одну:
+		
+		
+		if(rand === undefined) {
+			rand = randBetween(picWidths.length - 1);
+		}
+		// рандомно обираю один з трьох розмірів картинок:
+		let w = picWidths[rand];
+		let h = Math.floor(w * 0.68);
+
+		newBricks = fillMasonry(`https://picsum.photos/${w}/${h}?random=${randBetween(1000)}`, "", numOfPics[rand] * 2, false);
+		// якщо картинок стало 36+, видаляю кнопку на цьому ж кліку:
+		if (document.querySelectorAll(".grid-item").length >= maxBricks) {
+			loadMoreMasonryButton.remove();
+		};
+		let loadedCount = 0;
+		for (let brick of newBricks) {
+			brick.querySelector("img").onload = () => {
+				loadedCount++;
+				
+				console.log(`loadedCount ${loadedCount}/${newBricks.length}`);
+				
+				if(loadedCount === newBricks.length) {
+					console.log(`HOORAY!`);
+					const grid = document.querySelector(".grid");
+					const masonry = new Masonry(grid, masonryOptions);
+					document.querySelector(".grid").style.opacity = "1";
+				};
+			};
+		};
+		
+
+
+
+	};
+
+}
+
+
+
 
 
 

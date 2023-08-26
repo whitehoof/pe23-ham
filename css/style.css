@@ -94,7 +94,7 @@ h2::after {
 	justify-content: center;
 }
 
- .button:active {
+.button:active {
 	/* Анімація кнопок: */
 	margin-top: 0px;
 	margin-bottom: 4px;
@@ -184,7 +184,7 @@ nav .container {
 	transform: translateY(-50%);
 	font-size: 100px;
 	scale: 1;
-	transition: 
+	transition:
 		scale var(--dur-carousel) ease;
 }
 
@@ -251,7 +251,7 @@ nav li a::after {
 	height: 2px;
 	width: 100%;
 	background-color: var(--color-fill-main);
-	
+
 	opacity: 0;
 	transition: all var(--dur-carousel) ease-out;
 }
@@ -285,7 +285,7 @@ input#search {
 	width: 0;
 	opacity: 0;
 	transition: all var(--dur-short) ease-out;
-	
+
 	border: 1px solid var(--color-text-light);
 	color: var(--color-text-light);
 	font-weight: 300;
@@ -379,7 +379,7 @@ header .container {
 	display: flex;
 	flex-wrap: nowrap;
 	margin-bottom: 83px;
-	
+
 	background-color: var(--color-fill-main);
 	color: var(--color-text-light);
 	text-transform: uppercase;
@@ -398,7 +398,7 @@ header .container {
 	height: 377px;
 	width: 100%;
 	min-width: 290px;
-	
+
 	color: var(--color-text-light);
 	text-decoration: none;
 }
@@ -410,7 +410,7 @@ header .container {
 
 .options a svg {
 	scale: 1;
-	transition: 
+	transition:
 		scale var(--dur-carousel) ease-out,
 		opacity var(--dur-carousel) ease-out;
 }
@@ -452,7 +452,7 @@ header .container {
 	position: relative;
 	width: 100%;
 	padding-block: 27px;
-	
+
 	text-align: center;
 	border: 1px solid #EDEFEF;
 	color: var(--color-text-dark);
@@ -462,6 +462,7 @@ header .container {
 }
 
 .tabs li.active,
+/* also a li from another section: */
 .work .tabs li.active {
 	background-color: var(--color-fill-main);
 	color: var(--color-text-light);
@@ -512,11 +513,9 @@ header .container {
 	/* margin-bottom: 96px; */
 
 	background-image:
-		linear-gradient(
-		rgba(0, 0, 0, 0.7), 
-		rgba(0, 0, 0, 0.7)
-	  ),
-	  	url(../img/sections-backgrounds/section-2.jpg);
+		linear-gradient(rgba(0, 0, 0, 0.7),
+			rgba(0, 0, 0, 0.7)),
+		url(../img/sections-backgrounds/section-2.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -544,6 +543,8 @@ header .container {
 
 
 
+
+
 .work {
 	background-color: var(--color-bg-accent);
 	padding-block: 100px;
@@ -554,7 +555,7 @@ header .container {
 	background: transparent;
 }
 
-.work .preloader {
+.preloader {
 	position: absolute;
 	display: block;
 	width: 100%;
@@ -574,7 +575,6 @@ header .container {
 	justify-content: flex-start;
 	margin-bottom: 100px;
 }
-
 
 #ourwork > li {
 	position: relative;
@@ -681,7 +681,7 @@ header .container {
 }
 
 #news-parent .title {
-	
+
 	margin-bottom: 18px;
 	font-size: var(--fontsize-l);
 	font-weight: 700;
@@ -721,11 +721,9 @@ header .container {
 	padding-block: 100px;
 
 	background-image:
-		linear-gradient(
-		rgba(0, 0, 0, 0.5), 
-		rgba(0, 0, 0, 0.5)
-	  ),
-	  	url("../img/sections-backgrounds/section-3.jpg");
+		linear-gradient(rgba(0, 0, 0, 0.5),
+			rgba(0, 0, 0, 0.5)),
+		url("../img/sections-backgrounds/section-3.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -769,14 +767,14 @@ header .container {
 	height: 420px;
 }
 
-#carousel-content > li {
+#carousel-content>li {
 	position: absolute;
 	opacity: 0;
 
 	transition: all var(--dur-carousel) ease;
 }
 
-#carousel-content > li.active {
+#carousel-content>li.active {
 	opacity: 1;
 }
 
@@ -784,7 +782,7 @@ header .container {
 #carousel-content .text {
 	position: relative;
 	margin-bottom: 37px;
-	
+
 	text-align: center;
 	color: var(--color-text-light);
 	font-size: var(--fontsize-m);
@@ -803,7 +801,7 @@ header .container {
 
 #carousel-content .name {
 	margin-bottom: 18px;
-	
+
 	text-align: center;
 	color: var(--color-fill-main);
 	font-weight: 700;
@@ -813,7 +811,7 @@ header .container {
 
 #carousel-content .job {
 	margin-bottom: 37px;
-	
+
 	text-align: center;
 	color: var(--color-text-dark);
 	font-weight: 300;
@@ -871,14 +869,15 @@ header .container {
 
 #carousel img {
 	width: 71px;
-	height: 71px;	
+	height: 71px;
 }
 
 #carousel li .circle img {
 	transition: all calc(var(--dur-carousel) * 0.68) ease-in-out;
 }
+
 #carousel li:hover .circle img {
-	scale: 1.1;
+	scale: 1.2;
 }
 
 #carousel li {
@@ -900,14 +899,14 @@ header .container {
 
 
 
-
-
-
-
-
-
-
 /* SCROLLER BUTTONS: */
+
+
+
+
+
+
+
 
 .scroller {
 	cursor: pointer;
@@ -925,6 +924,81 @@ header .container {
 .scroller-right {
 	rotate: 180deg;
 }
+
+
+
+
+
+
+
+
+
+/* SECTION GALLERY OF BEST IMAGES ( MASONRY ) */
+
+
+
+.gallery {
+	background-color: var(--color-text-light);
+	padding-bottom: 100px;
+}
+
+.gallery h2 {
+	padding-top: 100px;
+
+}
+
+.grid {
+	transition: opacity var(--dur-carousel) ease;
+	padding-bottom: 100px;
+}
+
+.grid-item {
+	display: flex;
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.grid-item img {
+
+	height: 100%;
+
+}
+
+.grid-item:hover .gi-hovered {
+	display: flex;
+	flex-direction: row;
+}
+
+.gi-hovered {
+	position: absolute;
+	display: none;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.64);;
+}
+
+.searchglass, 
+.fullscreen {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 26px;
+	height: 26px;	
+	background-color: var(--color-fill-accent);
+	cursor: pointer;
+}
+
+.searchglass:hover svg, 
+.fullscreen:hover svg {
+	scale: 1.5;
+}
+
 
 
 
